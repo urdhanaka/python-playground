@@ -1,16 +1,15 @@
 import random
 
 # idk if this section is needed or not
-if __name__ == "__main__":
-    i = 1
-    roll = True
-    die = []
+roll = True
+die = []
     
 def get_diceValue():
     x = str(random.randint(1, 6))
     return x
 
 while roll:
+    i = 1
     diceTotal = int(input("how many dice(s) do you want? (type exit if you want to exit) "))
     if diceTotal == "exit":
         break
