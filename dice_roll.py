@@ -1,6 +1,6 @@
 import random
 
-# idk if this section is needed or not
+chooseNumber = True
 roll = True
 die = []
     
@@ -10,21 +10,25 @@ def get_diceValue():
 
 while roll:
     i = 1
-    diceTotal = int(input("how many dice(s) do you want? (type exit if you want to exit) "))
-    if diceTotal == "exit":
-        break
+    while chooseNumber:
+        diceTotal = input("how many dice(s) do you want to roll? (type exit if you want to exit) ")
+        if diceTotal.isdigit():
+            chooseNumber = False
+        elif diceTotal == "exit":
+            break
+        else:
+            print("Invalid input")
     
-    if diceTotal == i:
+    if int(diceTotal) == i:
         die.append(get_diceValue())
-    elif diceTotal > i:    
-        while diceTotal + 1 > i:
+    elif int(diceTotal) > i:    
+        while int(diceTotal) + 1 > i:
             die.append(get_diceValue())
             i += 1
     print(*die, sep=", ")
     
-    # reset the die list and i in case the user want to roll again
+    # reset the die list if the user want to roll again
     die.clear()
-    i = 1
     
     # ask the user if they want to roll again
     askAgain = True
@@ -32,7 +36,7 @@ while roll:
     while askAgain:
         if again == "y":
             askAgain = False
-            continue
+            chooseNumber = True
         elif again == "n":
             print("Thank you for rolling the dice")
             roll = False
@@ -40,4 +44,3 @@ while roll:
         else:
             print("your input is invalid, press y or n")
             again = input("Do you want to roll again? (y/n) ")
-            
