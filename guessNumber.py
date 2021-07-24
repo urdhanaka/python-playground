@@ -14,7 +14,7 @@ while playing:
         
     if userGuess == number:
         playing = False
-        print("your guess (" + str(userGuess) + ") is correct! You have guessed " + str(guesses) + " times!")
+        print(f"your guess ({number}) is correct! You have guessed {guesses} times!")
         break
     elif userGuess < number:
         if number % userGuess == 0:
