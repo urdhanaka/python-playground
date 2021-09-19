@@ -18,11 +18,11 @@ while playing:
         break
     elif userGuess < number:
         if number % userGuess == 0:
-            print("your guess is smaller and the number can be divisible by your number")
+            print("your guess is smaller and the number can divide the number")
         else:
             print("your guess is smaller than the number")
     elif userGuess > number:
         if userGuess % number == 0:
-            print("your number is greater than the number and can be divisible by the number")
+            print("your number is greater than the number and can be divided by the number")
         else:
             print("your number is greater than the number")
